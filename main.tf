@@ -12,8 +12,8 @@ provider "google" {
   project = "mission-gcp-certification"
   region  = "us-central1"
   zone    = "us-central1-c"
-  credentials = "keys.json"
-}
+  credentials = ${{ secrets.TERRAFROMKEYS }}
+}/*
 resource "google_compute_network" "vpc_network" {
 name = "gcp-terraform-network"
-}
+}*/
