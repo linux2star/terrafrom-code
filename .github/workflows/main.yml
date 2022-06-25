@@ -2,7 +2,7 @@ name: CI
 on: push
 
 jobs:
-  vpc-creation:
+  vpc-creation-for-gcp:
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
