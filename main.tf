@@ -14,6 +14,6 @@ provider "google" {
   zone    = "us-central1-c"
 }
 resource "google_compute_network" "vpc" {
-  name                    = demo-vpc
+  name                    = demovpc
   auto_create_subnetworks = "false"
 }
