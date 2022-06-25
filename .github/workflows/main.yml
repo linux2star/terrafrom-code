@@ -4,9 +4,11 @@ on: push
 jobs:
   vpc-creation-for-gcp:
     runs-on: self-hosted
+    env:
+        credentials = " ${{ secretes.TERRAFROMKEYS }}"
     steps:
-    - uses: actions/checkout@v2
-    - run: terraform init
-    - run: terraform plan
-    - run: terraform apply -auto-approve
+     - uses: actions/checkout@v2
+     - run: terraform init
+     - run: terraform plan
+     - run: terraform apply -auto-approve
     
