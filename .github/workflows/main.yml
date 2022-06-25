@@ -5,7 +5,7 @@ jobs:
   vpc-creation-for-gcp:
     runs-on: self-hosted
     env:
-        credentials = " ${{ secretes.TERRAFROMKEYS }}"
+        credentialskeys = " ${{ secretes.TERRAFROMKEYS }}"
     steps:
      - uses: actions/checkout@v2
      - run: terraform init
