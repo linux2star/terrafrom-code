@@ -7,5 +7,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: terraform init
-    - run: terraform plan
+    - run: terraform pla
+    - run: terraform apply -auto-approve
     
