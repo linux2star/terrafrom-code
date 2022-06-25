@@ -2,13 +2,12 @@ name: CI
 on: push
 
 jobs:
-  vpc-creation-for-gcp:
+  terraform:
     runs-on: self-hosted
     env:
-        credentialskeys = " ${{ secretes.TERRAFROMKEYS }}"
+         AWS_ACCESS_KEY_ID: ${{ secrets.TERRAFROMKEYS }}
     steps:
-     - uses: actions/checkout@v2
-     - run: terraform init
-     - run: terraform plan
-     - run: terraform apply -auto-approve
-    
+      - uses: actions/checkout@v2
+      - run: terraform init
+      - run: terraform plan
+      - run: terraform apply -auto-approve
