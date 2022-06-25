@@ -12,7 +12,6 @@ provider "google" {
   project = "mission-gcp-certification"
   region  = "us-central1"
   zone    = "us-central1-c"
-  credentials = "[$AWS_ACCESS_KEY_ID]"
 }
 resource "google_compute_network" "vpc_network" {
 name = "gcp-terraform-networksss"
