@@ -10,14 +10,14 @@ resource "google_compute_network" "main" {
 }
 # Public Subnet
 resource "google_compute_subnetwork" "public" {
-  name          = "public"
+  name          = "public1"
   ip_cidr_range = "10.0.0.0/24"
   region        = "us-central1"
   network       = google_compute_network.main.id
 }
 # Private Subnet
 resource "google_compute_subnetwork" "private" {
-  name          = "private"
+  name          = "private1"
   ip_cidr_range = "10.0.1.0/24"
   region        = "us-central1"
   network       = google_compute_network.main.id
@@ -34,7 +34,7 @@ resource "google_compute_instance" "demo" {
     }
   } 
 network_interface {
-    subnetwork = "public"
+    subnetwork = "public1"
     access_config {}
  } 
 }
