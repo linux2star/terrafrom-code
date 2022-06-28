@@ -2,7 +2,7 @@ provider "google" {
   project = "mission-gcp-certification"
   region  = "us-central1"
   zone    = "us-central1-c"
-  credentials = "key.json"
+  credentials = "keys.json"
 }
 resource "google_compute_network" "main" {
   name                    = "main"
