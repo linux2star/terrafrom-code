@@ -1,4 +1,5 @@
-resource "google_compute_instance" "demo" {
+/*
+  resource "google_compute_instance" "demo" {
   name         = "instance-by-terraform"
   machine_type = "e2-medium"
   zone         = "us-central1-a"
@@ -13,3 +14,4 @@ network_interface {
     access_config {}
  } 
 }
+*/
