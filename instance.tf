@@ -9,7 +9,7 @@ resource "google_compute_instance" "demo" {
     }
   } 
 network_interface {
-    subnetwork = "google_compute_subnetwork.public"
+    subnetwork = "google_compute_subnetwork.public.id"
     access_config {}
  } 
 }
