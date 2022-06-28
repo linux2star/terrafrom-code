@@ -22,6 +22,7 @@ resource "google_compute_subnetwork" "private" {
   region        = "us-central1"
   network       = google_compute_network.main.id
 }
+/*
 resource "google_compute_instance" "demo" {
   name         = "instance-by-terraform-new"
   machine_type = "e2-medium"
@@ -37,3 +38,4 @@ network_interface {
     access_config {}
  } 
 }
+*/
