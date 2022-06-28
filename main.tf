@@ -34,7 +34,7 @@ resource "google_compute_instance" "demo" {
     }
   } 
 network_interface {
-    subnetwork = "public1"
+    subnetwork = "google_compute_subnetwork.private.name"
     access_config {}
  } 
 }
