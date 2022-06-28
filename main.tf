@@ -33,8 +33,7 @@ resource "google_compute_instance" "demo" {
     }
   } 
 network_interface {
-    network = main
-    subnetwork = "public"
+    subnetwork = "google_compute_subnetwork.public.name"
     access_config {}
  } 
 }
