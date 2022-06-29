@@ -10,4 +10,4 @@ jobs:
       - uses: actions/checkout@v2
       - run: terraform init
       - run: terraform plan -var-file="dev.tfvars"
-      - run: terraform plan -var-file="dev.tfvars" -auto-approve
+      - run: terraform apply -auto-approve -var-file="dev.tfvars"
