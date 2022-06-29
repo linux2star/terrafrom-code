@@ -32,5 +32,9 @@ variable "private_subnet_rang" {
 description = "Google Cloud region"
 type        =  string
 }
+variable "environment" {
+description = "Google Cloud region"
+type        =  string
+}
 
 
