@@ -1,3 +1,4 @@
+### Google provider block ###############3
 provider "google" {
   project = "mission-gcp-certification"
   region  = "us-central1"
