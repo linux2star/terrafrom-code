@@ -1,7 +1,7 @@
-/*terraform {
+terraform {
   backend "gcs" {
-    bucket  = "var.bucket_name"
+    bucket  = "bucket-for-statefile-48693"
     prefix  = "terraform/state"
   }
 }
-*/
+
