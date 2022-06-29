@@ -6,17 +6,17 @@ type        = string
 
 variable "region" {
 description = "Google Cloud region"
-type        = list(string)
+type        =  string
 default     = "us-central1"
 }
 variable "zone" {
 description = "Google Cloud region"
-type        = list(string)
+type        =  string
 default     = "us-central1-a"
 }
 variable "project_name" {
 description = "Google Cloud region"
-type        = list(string)
+type        =  string
 default     = "new-project"
 }
 
