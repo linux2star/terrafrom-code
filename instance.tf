@@ -1,5 +1,5 @@
 resource "google_compute_instance" "demo" {
-  name         = "instance-by-terraform-new"
+  name         = "${var.environment}-instance"
   machine_type = "e2-medium"
   zone         = "us-central1-a"
   tags = ["terraform", "gcp"]
