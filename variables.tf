@@ -36,5 +36,9 @@ variable "environment" {
 description = "Google Cloud region"
 type        =  string
 }
+variable "machine_type" {
+description = "Google Cloud region"
+type        =  string
+}
 
 
