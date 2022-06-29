@@ -1,6 +1,6 @@
 provider "google" {
-  project = "mission-gcp-certification"
-  region  = "us-central1"
-  zone    = "us-central1-a"
+  project = var.project_name
+  region  = var.region
+  zone    = var.zone
   credentials = "keys.json"
 }
