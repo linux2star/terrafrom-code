@@ -1,5 +1,5 @@
 resource "google_compute_network" "main" {
-  name                    = var.vap_name
+  name                    = var.vpc_name
   auto_create_subnetworks = false
   routing_mode = "GLOBAL"
 }
