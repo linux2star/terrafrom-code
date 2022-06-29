@@ -5,14 +5,14 @@ resource "google_compute_network" "main" {
 }
 # Public Subnet
 resource "google_compute_subnetwork" "public" {
-  name          = "public"
+  name          = "${var.environment}-public-subnet"
   ip_cidr_range = var.public_subnet_rang
   region        = var.region
   network       = google_compute_network.main.id
 }
 # Private Subnet
 resource "google_compute_subnetwork" "private" {
-  name          = "private"
+  name          = "${var.environment}-private-subnet"
   ip_cidr_range = var.private_subnet_rang
   region        = var.region
   network       = google_compute_network.main.id
