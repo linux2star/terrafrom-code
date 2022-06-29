@@ -1,6 +1,6 @@
 resource "google_compute_instance" "demo" {
   name         = "${var.environment}-instance"
-  machine_type = var.machine_types
+  machine_type = var.machine_type
   zone         = var.region
   tags = ["terraform", "gcp"]
   boot_disk {
