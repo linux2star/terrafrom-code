@@ -5,10 +5,11 @@ jobs:
   terraform:
     runs-on: self-hosted
     env:
-         AWS_ACCESS_KEY_ID: ${{ secrets.TERRAFROMKEYS }}
+         DEV_ENV: ${{ secrets.DEVENV }}
     steps:
       - uses: actions/checkout@v2
       - run: terraform init
         # - run: terraform plan -var-file="uat.tfvars"
-      - run: echo ${{ secrets.DEVENV }}
+      - run: echo $DEV_ENV >> value.txt
+      - run: cat value.txt
         #    - run: terraform apply -auto-approve -var-file="uat.tfvars"
