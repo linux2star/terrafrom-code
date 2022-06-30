@@ -1,7 +1,7 @@
 terraform {
   backend "gcs" {
     bucket  = "bucket-for-statefile-48693"
-    prefix  = "terraform/dev-state-file"
+    prefix  = "terraform/uat-state-file/uat"
     credentials = "keys.json"
   }
 }
