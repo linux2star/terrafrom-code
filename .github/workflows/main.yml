@@ -12,6 +12,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: terraform init -backend-config="bucket=bucket-for-statefile-48693" -backend-config="prefix=$DEV_STATE_FILE" 
-      - run: terraform plan -var-file="$DEV_ENV"
-      - run: terraform apply -auto-approve -var-file="$DEV_ENV"
+        #- run: terraform init -backend-config="bucket=bucket-for-statefile-48693" -backend-config="prefix=$DEV_STATE_FILE" 
+      - run: terraform init -backend-config="bucket=bucket-for-statefile-48693" -backend-config="prefix=$UAT_STATE_FILE" 
+        #  - run: terraform plan -var-file="$DEV_ENV"
+      - run: terraform plan -var-file="$UAT_ENV"
+        #- run: terraform apply -auto-approve -var-file="$DEV_ENV"
+      - run: terraform apply -auto-approve -var-file="$UAT_ENV"
