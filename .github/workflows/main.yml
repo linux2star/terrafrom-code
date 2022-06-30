@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
         #      - run: terraform init
       - run: terraform init \
-            -backend-config="bucket=bucket-for-statefile-48693"
+            - backend-config="bucket=bucket-for-statefile-48693"
             #  -backend-config="prefix=demo" 
             # -backend-config="credentials=service-account.json"
       - run: terraform plan -var-file="$DEV_ENV"
