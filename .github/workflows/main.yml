@@ -6,10 +6,9 @@ jobs:
     runs-on: self-hosted
     env:
          DEV_ENV: ${{ secrets.DEVENV }}
+         UAT_ENV: ${{ secrets.UATENV }}
     steps:
       - uses: actions/checkout@v2
       - run: terraform init
       - run: terraform plan -var-file="$DEV_ENV"
-      - run: echo $DEV_ENV >> value.txt
-      - run: cat value.txt
         #    - run: terraform apply -auto-approve -var-file="uat.tfvars"
