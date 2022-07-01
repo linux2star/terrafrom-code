@@ -2,8 +2,7 @@ name: CI
 on: 
   push:
     branches:
-          - master
-          - dev-env
+            - '**'
 
 jobs:
   terraform:
@@ -15,7 +14,7 @@ jobs:
          UAT_STATE_FILE: ${{ secrets.STATE_FILE_PATH_UAT }}
 
     steps:
-      - uses: actions/checkout@v2
+            # - uses: actions/checkout@v2
       - run: echo running on branch ${GITHUB_REF##*/}
         #- run: terraform init -backend-config="bucket=bucket-for-statefile-48693" -backend-config="prefix=$DEV_STATE_FILE" 
         #- run: terraform init -backend-config="bucket=bucket-for-statefile-48693" -backend-config="prefix=$UAT_STATE_FILE" 
