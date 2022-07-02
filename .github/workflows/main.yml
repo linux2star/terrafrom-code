@@ -16,6 +16,8 @@ jobs:
     - name: dev branch
       run: |
         branch_current=${GITHUB_REF##*/}
+        echo $branch_current
+        /*
     - name: Let build env-dev
       if: branch_current == 'env-dev'
       run: |
@@ -27,6 +29,6 @@ jobs:
       if: branch_current == 'master'
       run: |
         terraform init -backend-config="bucket=bucket-for-statefile-48693" -backend-config="prefix=$UAT_STATE_FILE"
-        terraform plan -var-file="$UAT_ENV"
+        terraform plan -var-file="$UAT_ENV" */
           # - run: terraform apply -auto-approve -var-file="$DEV_ENV"
         # - run: terraform apply -auto-approve -var-file="$UAT_ENV"
