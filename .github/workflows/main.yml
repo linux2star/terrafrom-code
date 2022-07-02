@@ -21,4 +21,4 @@ jobs:
     - name: Find the current branch "commit-message"
       run: current_branch=${GITHUB_REF##*/}
     - name: Display branch name "commit-message"
-      run: echo "current_branch=$current_branch"
+      run: echo $current_branch
