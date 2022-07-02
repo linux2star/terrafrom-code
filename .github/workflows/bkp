@@ -1,0 +1,33 @@
+name: CI
+on:
+  push:
+      branches:
+              - '**'
+jobs:
+  terraform:
+    runs-on: self-hosted
+    env:
+         DEV_ENV: ${{ secrets.DEVENV }}
+         DEV_STATE_FILE: ${{ secrets.STATE_FILE_PATH_FOR_DEV }}
+         UAT_ENV: ${{ secrets.UATENV }}
+         UAT_STATE_FILE: ${{ secrets.STATE_FILE_PATH_UAT }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: dev branch
+      run: |
+        branch_current=${GITHUB_REF##*/}
+        echo $branch_current
+        #    - name: Let build env-dev
+        if: branch_current == 'env-dev'
+        # run: |
+        terraform init -backend-config="bucket=bucket-for-statefile-48693" -backend-config="prefix=$``DEV_STATE_FILE" 
+     #- run: terraform init -backend-config="bucket=bucket-for-statefile-48693" -backend-config="prefix=$UAT_STATE_FILE" 
+        terraform plan -var-file="$DEV_ENV"
+        #   - run: terraform plan -var-file="$UAT_ENV"
+        #    - name: let build env-uat
+        #      if: branch_current == 'master'
+        #      run: |
+        #terraform init -backend-config="bucket=bucket-for-statefile-48693" -backend-config="prefix=$UAT_STATE_FILE"
+        #terraform plan -var-file="$UAT_ENV"
+          # - run: terraform apply -auto-approve -var-file="$DEV_ENV"
+        # - run: terraform apply -auto-approve -var-file="$UAT_ENV"
