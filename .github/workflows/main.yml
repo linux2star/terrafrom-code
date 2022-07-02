@@ -15,7 +15,7 @@ jobs:
          UAT_ENV: ${{ secrets.UATENV }}
          UAT_STATE_FILE: ${{ secrets.STATE_FILE_PATH_UAT }}
          new_env: ${GITHUB_REF##*/}
-         current_branch = env-dev
+         current_branch: env-dev
     steps:
     # Checkout that works with "push" and "pull_request" trigger event
     - uses: actions/checkout@v2
