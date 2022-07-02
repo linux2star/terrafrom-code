@@ -22,7 +22,7 @@ jobs:
     # Set environment variables based on the last commit
     - name: Find the current branch "commit-message"
       run: |
-           if [[ $current_branch == 'env-dev' ]]; then
+           if [[ $current_branch == 'env-uat' ]]; then
                echo "$current_branch"
            else
                echo "do nothing"
