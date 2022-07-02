@@ -22,11 +22,8 @@ jobs:
     # Set environment variables based on the last commit
     - name: Find the current branch "commit-message"
       run: |
-           if [[ $current_branch == 'env-uat' ]]; then
+           if [[ $new_env == 'env-dev' ]]; then
                echo "$current_branch"
            else
                echo "do nothing"
            fi
-              #  current_branch=${GITHUB_REF##*/}
-              #echo $current_branch
-        #echo "is-auto-commit=${{ env.new_env }}"
