@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: dev branch
         run: |
-                branch_current=${GITHUB_REF##*/}
+           branch_current=${GITHUB_REF##*/}
            echo $branch_current     
 
         #- run: echo ${GITHUB_REF##*/} > branch.txt
