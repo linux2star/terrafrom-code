@@ -21,9 +21,12 @@ jobs:
     - uses: actions/checkout@v2
     # Set environment variables based on the last commit
     - name: Find the current branch "commit-message"
-      #    if: env.new_env == $current_branch
-      if: ${{ env.new_env == '${GITHUB_REF##*/}' }}
       run: |
-        current_branch=${GITHUB_REF##*/}
-        echo $current_branch
-        echo "is-auto-commit=${{ env.new_env }}"
+           if [[ $current_branch == 'env-dev' ]]; then
+               echo "$current_branch"
+           else
+               echo "do nothing"
+           fi
+              #  current_branch=${GITHUB_REF##*/}
+              #echo $current_branch
+        #echo "is-auto-commit=${{ env.new_env }}"
