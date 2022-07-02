@@ -26,6 +26,8 @@ jobs:
                terraform init -backend-config="bucket=bucket-for-statefile-48693" -backend-config="prefix=$DEV_STATE_FILE"
                terraform plan -var-file="$DEV_ENV" 
                #terraform apply -auto-approve -var-file="$DEV_ENV"
-           else
-               echo "do nothing"
+           elif [[ $current_branch == 'master' ]]; then
+               echo "echo do nothing test for uat"
+           else 
+               echo "branch is prod"
            fi
