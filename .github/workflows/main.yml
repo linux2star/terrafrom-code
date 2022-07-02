@@ -15,12 +15,13 @@ jobs:
          UAT_ENV: ${{ secrets.UATENV }}
          UAT_STATE_FILE: ${{ secrets.STATE_FILE_PATH_UAT }}
          new_env: ${GITHUB_REF##*/}
+         current_branch = env-dev
     steps:
     # Checkout that works with "push" and "pull_request" trigger event
     - uses: actions/checkout@v2
     # Set environment variables based on the last commit
     - name: Find the current branch "commit-message"
-      if: env.new_env == ${GITHUB_REF##*/}
+      if: env.new_env == env.current_branch
       run: |
         current_branch=${GITHUB_REF##*/}
         echo $current_branch
