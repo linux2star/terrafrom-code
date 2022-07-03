@@ -7,4 +7,5 @@ public_subnet_rang = "10.0.0.0/24"
 private_subnet_rang = "10.2.0.0/24"
 environment = "development" 
 machine_type = "e2-medium"
+############
 
