@@ -27,7 +27,7 @@ jobs:
                terraform plan -var-file="$DEV_ENV" 
                terraform apply -auto-approve -var-file="$DEV_ENV"
            elif [[ $current_branch == 'env-uat' ]]; then
-               terraform init -backend-config="bucket=bucket-for-statefile-4869" -backend-config="prefix=$UAT_STATE_FILE/rtzen-den-env.tfstate"
+               terraform init -backend-config="bucket=bucket-for-statefile-4869" -backend-config="prefix=$UAT_STATE_FILE"
                terraform plan -var-file="$UAT_ENV"
                terraform apply -auto-approve -var-file="$UAT_ENV"
            else 
