@@ -1,5 +1,5 @@
 #bucket_name = "bucket-for-statefile-48693"    # Put the desired GCS Bucket name.
-project_name = "mission-gcp-certification"
+project_name = "rtzen-355308"
 region = "us-central1"
 zone = "us-central1-a"
 vpc_name = "dev-vpc"
